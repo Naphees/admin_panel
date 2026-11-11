@@ -13,7 +13,7 @@ const app = express();
 // load environment variable
 dotenv.config();
 // all custom modules
-
+import AuthRoute from './routes/auth.route.js';
 
 
 // all middlewareware
@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({extended:true})); // allow  url data like id
 
 // ========  API Routes ========
 
-// app.use("/api/auth",) // handle auth routes
+ app.use("/api/auth",AuthRoute) // handle auth routes
 // app.use("/api/db",)   // handle db routes
 
 
@@ -47,7 +47,7 @@ app.get("/",(req,res)=>{
 
 //  server running port
 
-
-app.listen(5000,()=>{
-    console.log("Server is running on port 5000");
+const port = process.env.PORT || 5000;
+app.listen(port,()=>{
+    console.log(`Server is running on port: ${port}`);
 })

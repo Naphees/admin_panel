@@ -32,15 +32,6 @@ app.use(bodyParser.urlencoded({extended:true})); // allow  url data like id
 // ========  API Routes ========
 
  app.use("/api/auth",AuthRoute) // handle auth routes
-// app.use("/api/db",)   // handle db routes
-
-
-
-
-app.get("/",(req,res)=>{
-    return res.send("Hello");
-})
-
 
 
 

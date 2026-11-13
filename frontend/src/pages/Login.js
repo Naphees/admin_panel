@@ -11,6 +11,8 @@ export default function Login() {
         email_message:"",
         password_message:"",
         server_message:"",
+        
+        
     })
 
     // form data handler
@@ -24,6 +26,13 @@ export default function Login() {
     }
 
   return (
-    <div>Login</div>
+      <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+          <div>
+            <h1>Login Page</h1>
+            <input type='email' name='email' value={formData.email} onChange={handler} />
+            <input type='password' name='password' value={formData.password} onChange={handler} />
+            <button onClick={formSubmit}>Login</button>
+          </div>
+      </div>
   )
 }
